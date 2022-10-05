@@ -12,10 +12,11 @@ namespace CadastroAluno.Models
         public string Turma { get; set; }
         public double Media { get; set; }
 
-        public void AtualizarDados(string nome, string turma)
+        public void AtualizarDados(string nome, string turma, double media)
         {
             Nome = nome;
             Turma = turma;
+            Media = media;
         }
 
         public bool VeriicaAprovacao()
