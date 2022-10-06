@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 ﻿using CadastroAluno.Controllers;
-=======
 ﻿using Bogus;
-using CadastroAluno.Controllers;
->>>>>>> f20f616934f661096d36d796d9990ee8a8c42677
 using CadastroAluno.Models;
 using CadastroAluno.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -17,14 +13,29 @@ using Xunit;
 
 namespace CadastroAluno.Test
 {
-    class AlunosControllerTest
+    public class AlunosControllerTest
     {
-        Mock<IAlunoRepository> _repository;
-        Aluno alunoValido;
+        private Mock<IAlunoRepository> _repository;
+        private AlunosController _controller;
+
 
         public AlunosControllerTest()
         {
-           _repository = new Mock<IAlunoRepository>();
+            _repository = new Mock<IAlunoRepository>();
+            _controller = new AlunosController(_repository.Object);
+        }
+
+        [Fact]
+        public void IndexRetornaOuNaoRetorna()
+        {
+            //act
+            var result = _controller.Index();
+
+            //assert
+            var okResult = Assert.IsType<ViewResult>(result);
+
+
+            Assert.NotNull(result);
         }
 
     }
