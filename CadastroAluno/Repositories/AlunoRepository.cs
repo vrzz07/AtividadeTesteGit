@@ -45,7 +45,7 @@ namespace CadastroAluno.Repositories
             if (aluno == null)
                 return 0;
 
-            aluno.AtualizarDados(alunoAlterado.Nome, alunoAlterado.Turma, alunoAlterado.Media);
+            aluno.AtualizarDados(alunoAlterado.Nome, alunoAlterado.Turma);
 
             _context.Entry(aluno).State = EntityState.Modified;
             return _context.SaveChanges();
