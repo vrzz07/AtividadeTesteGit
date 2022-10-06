@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using CadastroAluno.Controllers;
+=======
+﻿using Bogus;
+using CadastroAluno.Controllers;
+>>>>>>> f20f616934f661096d36d796d9990ee8a8c42677
 using CadastroAluno.Models;
 using CadastroAluno.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
